@@ -23,7 +23,7 @@ Este documento registra evidencia técnica verificada. Todas las capturas fueron
 | 17 | 17-backend-ejecutandose.jpg | Backend en ejecución | GET /api/health | `{"status":"ok"}` | COMPLETA | 2026-08-16 | Local |
 | 18 | 18-frontend-ejecutandose.jpg | Frontend en ejecución | Carga de http://localhost:5173 | UI renderizada correctamente | COMPLETA | 2026-08-16 | Local |
 | 19 | 19-build-produccion.jpg | Build de producción | `npm run build` + `vite preview` | Build exitoso (dist/), UI funcional servida desde el build | COMPLETA | 2026-08-16 | Local |
-| 20 | 20-pruebas-automatizadas.jpg | Pruebas automatizadas | `npm test` (backend, `node --test`) | 4/4 tests pasan (registro/login, filtros+paginación, 401 sin token, 401 token inválido) | PENDIENTE DE CAPTURA | 2026-08-16 | Local |
+| 20 | 20-pruebas-automatizadas.jpg | Pruebas automatizadas | `npm test` (backend, `node --test`) | 4/4 tests pasan (registro/login, filtros+paginación, 401 sin token, 401 token inválido) | COMPLETA | 2026-08-17 | Local |
 
 ## Estado de verificación técnica
 
@@ -49,12 +49,7 @@ Se validó `POST /api/auth/register` contra el backend desplegado devolviendo `2
 
 ## Pendiente
 
-- **Item 20**: la captura de la salida de `npm test` debe tomarse manualmente desde la terminal (fuera del alcance de la automatización de navegador usada para el resto de las evidencias). Comando a ejecutar desde `backend/`:
-  ```
-  npm test
-  ```
-  Se espera ver: `tests 4`, `pass 4`, `fail 0`.
 - Antes de la entrega final, evaluar reemplazar `WP_API_URL`/`VITE_WORDPRESS_URL` por un WordPress headless propio si se cuenta con uno (actualmente apunta a un sitio WordPress público de terceros solo a fines de demostración).
 - Opcional: conectar los proyectos de Vercel al repositorio de GitHub para que cada push a `master` dispare un deploy automático (por ahora los deploys se hicieron manualmente vía CLI).
 
-> Entrega lista en cuanto a funcionalidad, evidencia visual local y despliegue real en Vercel + MongoDB Atlas. Solo falta la captura manual del ítem 20.
+> Entrega lista: funcionalidad completa, 21 evidencias visuales reales (locales y de producción) y despliegue real en Vercel + MongoDB Atlas.
