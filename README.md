@@ -67,4 +67,9 @@ Valores esperados:
 
 ## Despliegue
 
-La configuración base en [vercel.json](vercel.json) es un punto de partida para platform deployment. Antes de desplegar, revisar variables de entorno y compatibilidad final con el entorno real.
+Desplegado en Vercel como dos proyectos separados (backend y frontend), con MongoDB Atlas como base de datos:
+
+- Backend: https://backend-six-eta-88.vercel.app
+- Frontend: https://frontend-chi-nine-a199b69xho.vercel.app
+
+Cada carpeta (`backend/`, `frontend/`) tiene su propio `vercel.json`. El `vercel.json` de la raíz queda como referencia de un enfoque alternativo (monorepo en un solo proyecto) que no se usó en esta entrega. Detalle completo de la configuración y evidencias en [evidencias/README.md](evidencias/README.md).

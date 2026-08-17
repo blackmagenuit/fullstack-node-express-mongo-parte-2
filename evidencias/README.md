@@ -33,6 +33,20 @@ Este documento registra evidencia técnica verificada. Todas las capturas fueron
 - Autenticación JWT: APROBADA (token faltante/inválido/válido verificados con HTTP 401/401/200 reales)
 - WordPress headless: APROBADA — se verificó tanto el caso de éxito (posts reales de un sitio WordPress público) como el caso de error (dominio inexistente, HTTP 502)
 
+## Despliegue en Vercel (producción)
+
+Realizado el 2026-08-17, con dos proyectos separados como indica la consigna, en la cuenta de Vercel del alumno (equipo `tareas-idt`):
+
+- **Backend**: https://backend-six-eta-88.vercel.app (`vercel.json` propio en `backend/`, runtime `@vercel/node`)
+- **Frontend**: https://frontend-chi-nine-a199b69xho.vercel.app (build de Vite)
+- **Base de datos**: MongoDB Atlas (cluster `Cluster0`, base `fullstack_db`), conectado vía variable de entorno `MONGO_URI` en el proyecto backend. Se habilitó `0.0.0.0/0` en la IP Access List de Atlas porque Vercel usa IPs dinámicas.
+- Variables de entorno configuradas en Vercel:
+  - Backend: `MONGO_URI`, `JWT_SECRET` (generado, distinto al de desarrollo), `WP_API_URL`, `CLIENT_URL` (apuntando al dominio del frontend desplegado)
+  - Frontend: `VITE_API_URL` (apuntando al backend desplegado), `VITE_WORDPRESS_URL`
+- **21-deploy-produccion-vercel.jpg**: captura real de login + listado de usuarios + posts de WordPress, todo funcionando contra las URLs de producción (no localhost).
+
+Se validó `POST /api/auth/register` contra el backend desplegado devolviendo `201` con un usuario persistido en MongoDB Atlas real, y el flujo completo de login en el frontend desplegado.
+
 ## Pendiente
 
 - **Item 20**: la captura de la salida de `npm test` debe tomarse manualmente desde la terminal (fuera del alcance de la automatización de navegador usada para el resto de las evidencias). Comando a ejecutar desde `backend/`:
@@ -40,7 +54,7 @@ Este documento registra evidencia técnica verificada. Todas las capturas fueron
   npm test
   ```
   Se espera ver: `tests 4`, `pass 4`, `fail 0`.
-- **Despliegue en Vercel**: no realizado en esta sesión. Backend y frontend fueron validados solo en entorno local.
-- Antes de subir el proyecto, restaurar `WP_API_URL` a un valor real propio si se cuenta con un WordPress headless propio (actualmente apunta a un sitio WordPress público de terceros solo a fines de demostración).
+- Antes de la entrega final, evaluar reemplazar `WP_API_URL`/`VITE_WORDPRESS_URL` por un WordPress headless propio si se cuenta con uno (actualmente apunta a un sitio WordPress público de terceros solo a fines de demostración).
+- Opcional: conectar los proyectos de Vercel al repositorio de GitHub para que cada push a `master` dispare un deploy automático (por ahora los deploys se hicieron manualmente vía CLI).
 
-> Entrega lista en cuanto a funcionalidad y evidencia visual local. Falta la captura manual del ítem 20 y el despliegue en Vercel para considerar el proyecto completamente cerrado.
+> Entrega lista en cuanto a funcionalidad, evidencia visual local y despliegue real en Vercel + MongoDB Atlas. Solo falta la captura manual del ítem 20.
