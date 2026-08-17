@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
-import createDOMPurify from 'dompurify';
+import DOMPurify from 'dompurify';
 import { fetchUsers, loginUser, registerUser, fetchWordPressPosts } from './services/api';
 
 const defaultFilters = { search: '', role: '', page: 1, limit: 10 };
-const DOMPurify = createDOMPurify(window);
 
 const safeHtml = (value) => DOMPurify.sanitize(String(value || ''), {
   ALLOWED_TAGS: ['b', 'strong', 'em', 'i', 'p', 'br', 'ul', 'ol', 'li', 'a'],
