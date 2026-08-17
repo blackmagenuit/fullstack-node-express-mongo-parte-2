@@ -87,8 +87,10 @@ const startServer = async () => {
   }
 };
 
-if (require.main === module) {
+if (require.main === module || process.env.VERCEL) {
   startServer();
 }
 
-module.exports = { app, startServer };
+module.exports = app;
+module.exports.app = app;
+module.exports.startServer = startServer;
