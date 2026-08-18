@@ -13,3 +13,5 @@ backend/dist/
 coverage/
 .vite/
 .DS_Store
+.vercel
+.env*
