@@ -1,6 +1,25 @@
-# Full Stack Project
+# Full Stack Project — Node.js, Express, MongoDB & React
 
-Proyecto full stack con Node.js, Express, MongoDB, React + Vite, autenticación JWT y WordPress Headless.
+![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)
+![React](https://img.shields.io/badge/React-Vite-61DAFB?logo=react&logoColor=black)
+![JWT](https://img.shields.io/badge/Auth-JWT-black?logo=jsonwebtokens&logoColor=white)
+![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel&logoColor=white)
+
+Proyecto full stack con Node.js, Express, MongoDB, React + Vite, autenticación JWT y consumo de WordPress Headless (API pública).
+
+**🔗 Demo:** [Frontend](https://frontend-chi-nine-a199b69xho.vercel.app) · [Backend API](https://backend-six-eta-88.vercel.app/api/health)
+
+## Índice
+
+- [Estructura](#estructura)
+- [Requisitos](#requisitos)
+- [Variables de entorno](#variables-de-entorno)
+- [Inicio rápido](#inicio-rápido)
+- [Funcionalidad principal](#funcionalidad-principal)
+- [Seguridad](#seguridad)
+- [Despliegue](#despliegue)
 
 ## Estructura
 
