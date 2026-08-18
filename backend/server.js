@@ -56,7 +56,8 @@ const connectDatabase = async () => {
   }
 
   try {
-    await mongoose.connect(mongoUri);
+    mongoose.set('bufferTimeoutMS', 20000);
+    await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 20000 });
     console.log('MongoDB conectado');
     return mongoose.connection;
   } catch (error) {
